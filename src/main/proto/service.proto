@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.marmoset.service";
+option java_outer_classname = "ServiceProto";
+option objc_class_prefix = "SVC";
+
+package service;
+
+// Interface exported by the server.
+service ChatServer {
+
+  rpc openSession(stream Message) returns (stream Message) {}
+
+  //rpc ListFeatures(Rectangle) returns (stream Feature) {}
+
+  //rpc RecordRoute(stream Point) returns (RouteSummary) {}
+
+  //rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+}
+
+message Message {
+  string target = 1;
+  string message = 2;
+}
